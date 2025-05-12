@@ -1,0 +1,128 @@
+/opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py                                                                                           
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 20:47:59.424 Python[13739:75210431] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 20:47:59.424 Python[13739:75210431] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 20:48:02.010 Python[13739:75210431] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 20:56:40.137 Python[14552:75218911] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 20:56:40.137 Python[14552:75218911] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 20:56:45.370 Python[14552:75218911] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+/opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 20:56:58.927 Python[14719:75219480] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 20:56:58.927 Python[14719:75219480] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 20:57:01.476 Python[14719:75219480] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 20:57:56.111 Python[14960:75220798] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 20:57:56.111 Python[14960:75220798] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/tkinter/__init__.py", line 2068, in __call__
+    return self.func(*args)
+           ~~~~~~~~~^^^^^^^
+TypeError: CybersecurityRiskAssessment.calculate_button_is_clicked() takes 1 positional argument but 2 were given
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+Traceback (most recent call last):
+  File "/Users/tmekaumput/cybersec-risk-assessment/app.py", line 170, in <module>
+    cra = CybersecurityRiskAssessment()
+  File "/Users/tmekaumput/cybersec-risk-assessment/app.py", line 67, in __init__
+    self.calculate_button.bind("<Button-1>", self.calculate_button_is_clicked)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CybersecurityRiskAssessment' object has no attribute 'calculate_button_is_clicked'
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:00:43.794 Python[15553:75224325] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:00:43.794 Python[15553:75224325] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/tkinter/__init__.py", line 2068, in __call__
+    return self.func(*args)
+           ~~~~~~~~~^^^^^^^
+TypeError: calculate_button_is_clicked() takes 0 positional arguments but 1 was given
+/opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:05:19.371 Python[16185:75229378] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:05:19.371 Python[16185:75229378] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Error occurred: Invalid asset name
+2025-05-12 21:05:25.432 Python[16185:75229378] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+Error occurred: invalid literal for int() with base 10: ''
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:06:03.588 Python[16410:75230400] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:06:03.588 Python[16410:75230400] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Error occurred: Invalid asset name
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:06:35.542 Python[16589:75231038] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:06:35.542 Python[16589:75231038] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:07:16.450 Python[16787:75231893] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:07:16.450 Python[16787:75231893] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 21:07:19.135 Python[16787:75231893] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+Error occurred: invalid literal for int() with base 10: ''
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/tkinter/__init__.py", line 2068, in __call__
+    return self.func(*args)
+           ~~~~~~~~~^^^^^^^
+  File "/Users/tmekaumput/cybersec-risk-assessment/app.py", line 164, in calculate_button_is_clicked
+    self.update_result(SLE=SLE, ALE=ALE)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/tmekaumput/cybersec-risk-assessment/app.py", line 154, in update_result
+    self.update_sle_result(kwargs.SLE)
+                           ^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'SLE'
+/opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:07:52.081 Python[17017:75232959] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:07:52.082 Python[17017:75232959] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 21:07:54.671 Python[17017:75232959] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/tkinter/__init__.py", line 2068, in __call__
+    return self.func(*args)
+           ~~~~~~~~~^^^^^^^
+  File "/Users/tmekaumput/cybersec-risk-assessment/app.py", line 164, in calculate_button_is_clicked
+    self.update_result(SLE=SLE, ALE=ALE)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/tmekaumput/cybersec-risk-assessment/app.py", line 154, in update_result
+    self.update_sle_result(kwargs.SLE)
+                           ^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'SLE'
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:10:26.857 Python[17435:75235906] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:10:26.857 Python[17435:75235906] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 21:10:29.340 Python[17435:75235906] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:11:40.360 Python[17700:75237328] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:11:40.360 Python[17700:75237328] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 21:11:42.534 Python[17700:75237328] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:15:44.278 Python[18257:75241375] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:15:44.278 Python[18257:75241375] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 21:15:46.217 Python[18257:75241375] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/tkinter/__init__.py", line 2068, in __call__
+    return self.func(*args)
+           ~~~~~~~~~^^^^^^^
+  File "/Users/tmekaumput/cybersec-risk-assessment/app.py", line 180, in clear_button_is_clicked
+    self.update_asset_name("")
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^
+TypeError: CybersecurityRiskAssessment.update_asset_name() takes 1 positional argument but 2 were given
+/opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:20:24.436 Python[18927:75246589] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:20:24.436 Python[18927:75246589] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 21:20:25.694 Python[18927:75246589] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:23:59.773 Python[19417:75250063] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:23:59.773 Python[19417:75250063] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 21:24:01.965 Python[19417:75250063] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+Annualised rate error: could not convert string to float: '0.0.5'
+Error occurred: could not convert string to float: '0.0.5'
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:27:25.810 Python[19879:75253493] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:27:25.810 Python[19879:75253493] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 21:27:28.095 Python[19879:75253493] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+tmekaumput@Kampanarts-MacBook-Pro cybersec-risk-assessment % /opt/homebrew/bin/python3 /Users/tmekaumput/cybersec-risk-assessment/app.py
+2025-05-12 21:29:54.350 Python[20258:75256658] +[IMKClient subclass]: chose IMKClient_Modern
+2025-05-12 21:29:54.350 Python[20258:75256658] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+2025-05-12 21:29:57.360 Python[20258:75256658] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit

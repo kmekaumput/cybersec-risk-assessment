@@ -6,34 +6,35 @@ from tkinter import *
 # multiplying the SLE with the annualised rated of occurrence (AR)
 class CybersecurityRiskAssessment():
 
+    # Constructor to initialise GUI components
     def __init__(self):
         # Instantiate window object
         self.window = Tk()
 
         # Set the title of window and size
         self.window.title("Cybersecurity Risk Assessment")
-        self.window.geometry("700x400")
+        self.window.geometry("800x400")
 
         # Add asset name to the layout
-        self.asset_name_label = Label(self.window, text="Enter the asset name:", anchor='w', width=20)
+        self.asset_name_label = Label(self.window, text="Enter the asset name:", anchor='w', width=30)
         self.asset_name_label.grid(row=0, column=0, padx=10, pady=10)
         self.asset_name_input = Entry(self.window, width=10)
         self.asset_name_input.grid(row=0, column=1, padx=10, pady=10)
 
         # Add asset value to the layout
-        self.asset_value_label = Label(self.window, text="Enter the asset value:", anchor='w', width=20)
+        self.asset_value_label = Label(self.window, text="Enter the asset value:", anchor='w', width=30)
         self.asset_value_label.grid(row=1, column=0, padx=10, pady=10)
         self.asset_value_input = Entry(self.window, width=10)
         self.asset_value_input.grid(row=1, column=1, padx=10, pady=10)
 
         # Add exposure value to the layout
-        self.exp_label = Label(self.window, text="Enter the exposure value:", anchor='w', width=20)
+        self.exp_label = Label(self.window, text="Enter the exposure value:", anchor='w', width=30)
         self.exp_label.grid(row=2, column=0, padx=10, pady=10)
         self.exp_input = Entry(self.window, width=10)
         self.exp_input.grid(row=2, column=1, padx=10, pady=10)
 
         # Add annularised rate to the layout
-        self.annualarised_rate_label = Label(self.window, text="Enter the annualarised rate of occurance:", anchor='w', width=20)
+        self.annualarised_rate_label = Label(self.window, text="Enter the annualarised rate of occurance:", anchor='w', width=30)
         self.annualarised_rate_label.grid(row=3, column=0, padx=10, pady=10)
         self.annualarised_rate_input = Entry(self.window, width=10)
         self.annualarised_rate_input.grid(row=3, column=1, padx=10, pady=10)
@@ -51,16 +52,25 @@ class CybersecurityRiskAssessment():
         self.close_button.grid(row=4, column=2, padx=5, pady=10)
 
         # Add asset name label for the output to the layout
-        self.asset_name_output_label = Label(self.window, text="Asset name is:", anchor='w', width=30)
+        self.asset_name_output_label = Label(self.window, text="Asset name is:", anchor='w', width=40)
         self.asset_name_output_label.grid(row=5, column=1, padx=10, pady=10)
 
         # Add SLE value label for the output to the layout
-        self.sle_output_label = Label(self.window, text="SLE result is:", anchor='w', width=30)
+        self.sle_output_label = Label(self.window, text="SLE result is:", anchor='w', width=40)
         self.sle_output_label.grid(row=6, column=1, padx=10, pady=10)
 
         # Add ALE value label for the output to the layout
-        self.ale_output_label = Label(self.window, text="ALE result is:", anchor='w', width=30)
+        self.ale_output_label = Label(self.window, text="ALE result is:", anchor='w', width=40)
         self.ale_output_label.grid(row=7, column=1, padx=10, pady=10)
+
+        # Bind the calculate button to the function
+        self.calculate_button.bind("<Button-1>", self.calculate_button_is_clicked)
+
+        # Bind the clear button to the function
+        self.clear_button.bind("<Button-1>", self.clear_button_is_clicked)
+
+        # Bind the close button to the function
+        self.close_button.bind("<Button-1>", self.close_button_is_clicked)
 
     # Function get the value of asset name from user input
     # If the asset name is empty, raise an error
@@ -102,76 +112,81 @@ class CybersecurityRiskAssessment():
             print("Annualised rate error:", e)
             raise e
         return ar
+    
+    def clear_asset_name(self):
+        self.asset_name_input.delete(0, 'end')
 
+    def clear_asset_value(self):
+        self.asset_value_input.delete(0, 'end')
+
+    def clear_exposure_value(self):
+        self.exp_input.delete(0, 'end')
+
+    def clear_annualised_rate(self):
+        self.annualarised_rate_input.delete(0, 'end')
+
+    # Function to calculate SLE and ALE
+    def calculate(self):
+        av = self.get_asset_value()
+        ev = self.get_exposure_value()
+        ar = self.get_annualised_rate()
+
+        SLE = av * ev / 100
+        ALE = SLE * ar
+
+        return (SLE, ALE)
+
+    # Update the asset name to the label with uppercase asset name
+    def update_asset_name(self, asset_name = ""):
+        self.asset_name_output_label.config(text = "Asset name is: " + asset_name.upper())
+
+    # Update the SLE result to the label
+    def update_sle_result(self, result):
+        self.sle_output_label.config(text = "SLE result is: " + str(result))
+
+    # Update the ALE result to the label
+    def update_ale_result(self, result):
+        self.ale_output_label.config(text = "ALE result is: " + str(result))
+
+    # Display error when invalid input data is provided
+    def display_error(self):
+        self.sle_output_label.config(text = "Unable to calculate SLE due to input error, please try again")
+        self.ale_output_label.config(text = "Unable to calculate ALE due to input error, please try again")
+
+    # Update the calculation result to the labels
+    def update_result(self, sle, ale):
+        self.update_sle_result(sle)
+        self.update_ale_result(ale)
+        
     def run(self):
         self.window.mainloop()
 
-cra = CybersecurityRiskAssessment()
-cra.run()
+    # Function to retrieve the values from the input text boxes and invoke the calculation function
+    # Then update the result to the output labels
+    def calculate_button_is_clicked(self, event):
+        try:
+            asset_name = self.get_asset_name()
+            self.update_asset_name(asset_name)
+            (SLE, ALE) = self.calculate()
+            self.update_result(SLE, ALE)
+        except ValueError as e:
+            print("Error occurred:", e)
+            self.display_error()
 
+    # Function to clear all the input text boxes
+    def clear_button_is_clicked(self, event):
+        self.clear_asset_name()
+        self.clear_asset_value()
+        self.clear_exposure_value()
+        self.clear_annualised_rate()
+        self.update_asset_name("")
+        self.update_sle_result("")
+        self.update_ale_result("")
 
-# Function setAssetName(assetName an)
-#     Set user input AssetName = an
+    # Function to close the application
+    def close_button_is_clicked(self, event):
+        self.window.destroy()
 
-# Function setAssetValue(assetValue av)
-#     Set user input AssetValue = av
-
-# Function setExposureValue(exposureValue ev)
-#     Set user input ExposureValue = ev
-
-# Function setAnnualisedRate(annualisedRate ar)
-#     Set user input AnnualisedRate = ar
-
-# Function updateSelectedAssetName(asset a)
-#     Set Asset Name text with a
-
-# Function updateSLEResult(result r)
-#     Set SLE result text with r
-
-# Function updateALEResult(result r)
-#     Set ALE result text with r
-
-# Function calculate()
-#     av = getAssetValue()
-#     ev = exposureValue()
-#     ar = getAnnualisedRate()
-
-#     SLE = av X ev
-#     ALE = SLE X ar
-
-#     Return SLE, ALE
-
-# Function displayError()
-#     updateSLEResult(“Unable to calculate SLE due to input error, please try again”)
-#     updateALEResult(“Unable to calculate ALE due to input error, please try again”)
-
-# Function calculateButtonClicked()
-#     Try
-#         an = getAssetName() and convert to uppercase
-#         assetNameText = “Asset name is: “ + an
-#         updateSelectedAssetName(assetNameText)
-#         SLE, ALE = calculate()
-#         SLE_TEXT = convert SLE to string
-#         ALE_TEXT = convert ALE to string
-#         updateSLEResult(“SLE result is: “ + SLE_TEXT)
-#         updateALEResult(“ALE result is: “ + ALE_TEXT)
-#     Catch Error
-#         displayError()
-
-# Function closeButtonClicked()
-#     Close main window
-
-# Function clearButtonClicked()
-#     setAssetName(empty value)
-#     setAssetValue(empty value)
-#     setExposureValue(empty value)
-#     setAnnualisedRate(empty value)
-
-# if calculateButton is clicked
-#    calculateButtonClicked()
-
-# if clearButton is clicked
-#     clearButtonClicked()
-
-# if closeButton is clicked
-#     closeButtonClicked()
+if __name__ == "__main__":
+    cra = CybersecurityRiskAssessment()
+    cra.run()
