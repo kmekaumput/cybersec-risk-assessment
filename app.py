@@ -8,6 +8,8 @@ class CybersecurityRiskAssessment():
 
     # Constructor to initialise GUI components
     def __init__(self):
+        row_index = 0
+
         # Instantiate window object
         self.window = Tk()
 
@@ -17,31 +19,43 @@ class CybersecurityRiskAssessment():
 
         # Add asset name to the layout
         self.asset_name_label = Label(self.window, text="Enter the asset name:", anchor='w', width=30)
-        self.asset_name_label.grid(row=0, column=0, padx=10, pady=10)
+        self.asset_name_label.grid(row=row_index, column=0, padx=10, pady=10)
         self.asset_name_input = Entry(self.window, width=10)
-        self.asset_name_input.grid(row=0, column=1, padx=10, pady=10)
+        self.asset_name_input.grid(row=row_index, column=1, padx=10, pady=10)
+        
+        # Increment row_index
+        row_index += 1
 
         # Add asset value to the layout
         self.asset_value_label = Label(self.window, text="Enter the asset value:", anchor='w', width=30)
-        self.asset_value_label.grid(row=1, column=0, padx=10, pady=10)
+        self.asset_value_label.grid(row=row_index, column=0, padx=10, pady=10)
         self.asset_value_input = Entry(self.window, width=10)
-        self.asset_value_input.grid(row=1, column=1, padx=10, pady=10)
+        self.asset_value_input.grid(row=row_index, column=1, padx=10, pady=10)
+
+        # Increment row_index
+        row_index += 1
 
         # Add exposure value to the layout
         self.exp_label = Label(self.window, text="Enter the exposure value:", anchor='w', width=30)
-        self.exp_label.grid(row=2, column=0, padx=10, pady=10)
+        self.exp_label.grid(row=row_index, column=0, padx=10, pady=10)
         self.exp_input = Entry(self.window, width=10)
-        self.exp_input.grid(row=2, column=1, padx=10, pady=10)
+        self.exp_input.grid(row=row_index, column=1, padx=10, pady=10)
+
+        # Increment row_index
+        row_index += 1
 
         # Add annularised rate to the layout
         self.annualarised_rate_label = Label(self.window, text="Enter the annualarised rate of occurance:", anchor='w', width=30)
-        self.annualarised_rate_label.grid(row=3, column=0, padx=10, pady=10)
+        self.annualarised_rate_label.grid(row=row_index, column=0, padx=10, pady=10)
         self.annualarised_rate_input = Entry(self.window, width=10)
-        self.annualarised_rate_input.grid(row=3, column=1, padx=10, pady=10)
+        self.annualarised_rate_input.grid(row=row_index, column=1, padx=10, pady=10)
 
+        # Increment row_index
+        row_index += 1
+        
         # Add the calculate button to the layout
         self.calculate_button = Button(self.window, text="Calculate", anchor='center', width=5)
-        self.calculate_button.grid(row=4, column=0, padx=5, pady=10)
+        self.calculate_button.grid(row=row_index, column=0, padx=5, pady=10)
 
         # Add the clear button to the layout
         self.clear_button = Button(self.window, text="Clear", anchor='center', width=5)
@@ -51,17 +65,20 @@ class CybersecurityRiskAssessment():
         self.close_button = Button(self.window, text="Exit", anchor='center', width=5)
         self.close_button.grid(row=4, column=2, padx=5, pady=10)
 
+        # Increment row_index
+        row_index += 1
+        
         # Add asset name label for the output to the layout
         self.asset_name_output_label = Label(self.window, text="Asset name is:", anchor='w', width=40)
-        self.asset_name_output_label.grid(row=5, column=1, padx=10, pady=10)
+        self.asset_name_output_label.grid(row=row_index, column=1, padx=10, pady=10)
 
         # Add SLE value label for the output to the layout
         self.sle_output_label = Label(self.window, text="SLE result is:", anchor='w', width=40)
-        self.sle_output_label.grid(row=6, column=1, padx=10, pady=10)
+        self.sle_output_label.grid(row=row_index, column=1, padx=10, pady=10)
 
         # Add ALE value label for the output to the layout
         self.ale_output_label = Label(self.window, text="ALE result is:", anchor='w', width=40)
-        self.ale_output_label.grid(row=7, column=1, padx=10, pady=10)
+        self.ale_output_label.grid(row=row_index, column=1, padx=10, pady=10)
 
         # Bind the calculate button to the function
         self.calculate_button.bind("<Button-1>", self.calculate_button_is_clicked)
