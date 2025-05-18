@@ -59,11 +59,11 @@ class CybersecurityRiskAssessment():
 
         # Add the clear button to the layout
         self.clear_button = Button(self.window, text="Clear", anchor='center', width=5)
-        self.clear_button.grid(row=4, column=1, padx=5, pady=10)
+        self.clear_button.grid(row=row_index, column=1, padx=5, pady=10)
 
         # Add the close button to the layout
         self.close_button = Button(self.window, text="Exit", anchor='center', width=5)
-        self.close_button.grid(row=4, column=2, padx=5, pady=10)
+        self.close_button.grid(row=row_index, column=2, padx=5, pady=10)
 
         # Increment row_index
         row_index += 1
