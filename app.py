@@ -8,77 +8,97 @@ class CybersecurityRiskAssessment():
 
     # Constructor to initialise GUI components
     def __init__(self):
-        row_index = 0
+        input_row_index = 0
 
         # Instantiate window object
         self.window = Tk()
 
         # Set the title of window and size
         self.window.title("Cybersecurity Risk Assessment")
-        self.window.geometry("800x400")
+        self.window.geometry("520x380")
+
+        self.input_frame = Frame(self.window)
+        self.input_frame.place(x=5,y=5)
+        # self.input_frame.pack()
+        self.input_frame['borderwidth'] = 1
+        self.input_frame['relief'] = 'sunken'
 
         # Add asset name to the layout
-        self.asset_name_label = Label(self.window, text="Enter the asset name:", anchor='w', width=30)
-        self.asset_name_label.grid(row=row_index, column=0, padx=10, pady=10)
-        self.asset_name_input = Entry(self.window, width=10)
-        self.asset_name_input.grid(row=row_index, column=1, padx=10, pady=10)
+        self.asset_name_label = Label(self.input_frame, text="Enter the asset name:", anchor='w', width=40)
+        self.asset_name_label.grid(row=input_row_index, column=0, padx=30, pady=10)
+        self.asset_name_input = Entry(self.input_frame, width=20)
+        self.asset_name_input.grid(row=input_row_index, column=1, padx=10, pady=10)
         
-        # Increment row_index
-        row_index += 1
+        # Increment input_row_index
+        input_row_index += 1
 
         # Add asset value to the layout
-        self.asset_value_label = Label(self.window, text="Enter the asset value:", anchor='w', width=30)
-        self.asset_value_label.grid(row=row_index, column=0, padx=10, pady=10)
-        self.asset_value_input = Entry(self.window, width=10)
-        self.asset_value_input.grid(row=row_index, column=1, padx=10, pady=10)
+        self.asset_value_label = Label(self.input_frame, text="Enter the asset value:", anchor='w', width=40)
+        self.asset_value_label.grid(row=input_row_index, column=0, padx=30, pady=10)
+        self.asset_value_input = Entry(self.input_frame, width=20)
+        self.asset_value_input.grid(row=input_row_index, column=1, padx=10, pady=10)
 
-        # Increment row_index
-        row_index += 1
+        # Increment input_row_index
+        input_row_index += 1
 
         # Add exposure value to the layout
-        self.exp_label = Label(self.window, text="Enter the exposure value:", anchor='w', width=30)
-        self.exp_label.grid(row=row_index, column=0, padx=10, pady=10)
-        self.exp_input = Entry(self.window, width=10)
-        self.exp_input.grid(row=row_index, column=1, padx=10, pady=10)
+        self.exp_label = Label(self.input_frame, text="Enter the exposure value:", anchor='w', width=40)
+        self.exp_label.grid(row=input_row_index, column=0, padx=30, pady=20)
+        self.exp_input = Entry(self.input_frame, width=20)
+        self.exp_input.grid(row=input_row_index, column=1, padx=20, pady=10)
 
-        # Increment row_index
-        row_index += 1
+        # Increment input_row_index
+        input_row_index += 1
 
         # Add annularised rate to the layout
-        self.annualarised_rate_label = Label(self.window, text="Enter the annualarised rate of occurance:", anchor='w', width=30)
-        self.annualarised_rate_label.grid(row=row_index, column=0, padx=10, pady=10)
-        self.annualarised_rate_input = Entry(self.window, width=10)
-        self.annualarised_rate_input.grid(row=row_index, column=1, padx=10, pady=10)
+        self.annualarised_rate_label = Label(self.input_frame, text="Enter the annualarised rate of occurance:", anchor='w', width=40)
+        self.annualarised_rate_label.grid(row=input_row_index, column=0, padx=30, pady=10)
+        self.annualarised_rate_input = Entry(self.input_frame, width=20)
+        self.annualarised_rate_input.grid(row=input_row_index, column=1, padx=20, pady=10)
 
-        # Increment row_index
-        row_index += 1
+        # Action frame contains action buttons and the result from calculation
+        self.action_frame = Frame(self.window)
+        self.action_frame.place(x=5, y=200)
         
+        self.button_frame = Frame(self.action_frame)
+        self.button_frame.grid(column=1, row=0)
+        self.button_frame['borderwidth'] = 0
+
         # Add the calculate button to the layout
-        self.calculate_button = Button(self.window, text="Calculate", anchor='center', width=5)
-        self.calculate_button.grid(row=row_index, column=0, padx=5, pady=10)
+        self.calculate_button = Button(self.button_frame, text="Calculate", anchor='center', width=7)
+        self.calculate_button.grid(row=0, column=0, padx=10, pady=8)
 
         # Add the clear button to the layout
-        self.clear_button = Button(self.window, text="Clear", anchor='center', width=5)
-        self.clear_button.grid(row=row_index, column=1, padx=5, pady=10)
+        self.clear_button = Button(self.button_frame, text="Clear", anchor='center', width=7)
+        self.clear_button.grid(row=1, column=0, padx=10, pady=8)
 
         # Add the close button to the layout
-        self.close_button = Button(self.window, text="Exit", anchor='center', width=5)
-        self.close_button.grid(row=row_index, column=2, padx=5, pady=10)
+        self.close_button = Button(self.button_frame, text="Exit", anchor='center', width=7)
+        self.close_button.grid(row=2, column=0, padx=10, pady=8)
 
-        # Increment row_index
-        row_index += 1
+        self.output_frame = Frame(self.action_frame)
+        self.output_frame['borderwidth'] = 0
+        self.output_frame.grid(column=0, row=0)
+
+        output_row_index = 0
         
         # Add asset name label for the output to the layout
-        self.asset_name_output_label = Label(self.window, text="Asset name is:", anchor='w', width=40)
-        self.asset_name_output_label.grid(row=row_index, column=1, padx=10, pady=10)
+        self.asset_name_output_label = Label(self.output_frame, text="Asset name is:", anchor='w', width=50)
+        self.asset_name_output_label.grid(row=output_row_index, column=0, padx=30, pady=10)
+
+        # Increment output_row_index
+        output_row_index += 1
 
         # Add SLE value label for the output to the layout
-        self.sle_output_label = Label(self.window, text="SLE result is:", anchor='w', width=40)
-        self.sle_output_label.grid(row=row_index, column=1, padx=10, pady=10)
+        self.sle_output_label = Label(self.output_frame, text="SLE result is:", anchor='w', width=50)
+        self.sle_output_label.grid(row=output_row_index, column=0, padx=30, pady=10)
+        
+        # Increment output_row_index
+        output_row_index += 1
 
         # Add ALE value label for the output to the layout
-        self.ale_output_label = Label(self.window, text="ALE result is:", anchor='w', width=40)
-        self.ale_output_label.grid(row=row_index, column=1, padx=10, pady=10)
+        self.ale_output_label = Label(self.output_frame, text="ALE result is:", anchor='w', width=50)
+        self.ale_output_label.grid(row=output_row_index, column=0, padx=30, pady=10)
 
         # Bind the calculate button to the function
         self.calculate_button.bind("<Button-1>", self.calculate_button_is_clicked)
